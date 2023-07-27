@@ -1,0 +1,235 @@
+day 4 core java 
+==============================
+AccountApp.java
+package bootcamp;
+
+
+class Account 
+{
+	int accountId;
+	String accountHolderName;
+	double balance;
+	
+	Account(int accountId,String accountHolderName,double balance){
+		System.out.println("this is constructor");
+		this.accountId=accountId;
+		this.accountHolderName=accountHolderName;
+		this.balance=balance;
+	}
+	void displayAccountDetails() {
+		System.out.println("accountId : "+accountId);
+		System.out.println("accountHolderName : "+accountHolderName);
+		System.out.println("balance : "+balance);
+	}
+	void deposit(double amount) {
+		balance+=amount;
+		
+	}
+	void withdraw(double amount) {
+		balance-=amount;
+		
+	}
+	double getBalance() {
+		return balance;
+	}
+}
+public class AccountApp {
+
+	public static void main(String[] args) {
+		 Account ac=new Account(01,"adarsh",9000);
+		 ac.displayAccountDetails();
+		 ac.deposit(9000);
+		 ac.displayAccountDetails();
+		 ac.withdraw(4560);
+		 ac.displayAccountDetails();
+		 
+
+	}
+
+}
+
+
+carApp.java
+
+package bootcamp;
+
+class car {
+	
+	int modelnum;
+	String brandname;
+	int km_driven;
+	
+	String checkCarStatus() {
+		
+		if(km_driven <=5000)
+			return "car is new";
+		else if(km_driven >5000 && km_driven <=20000)
+			return "car is in pretty good condition";
+		return "car is old ";
+		
+	}
+}
+public class carApp {
+
+	public static void main(String[] args) {
+	int a=10;
+		car Car1 = new car();
+		Car1.modelnum=2020;
+		Car1.brandname="Audi";
+		Car1.km_driven=3456;
+		
+		car Car2= new car();
+		Car2.modelnum=2021;
+		Car2.brandname="bently";
+		Car2.km_driven=98756;
+		
+		
+		System.out.println(Car2.checkCarStatus());
+		
+		
+		
+		
+		
+		
+	}
+
+}
+
+toStringDemo.java
+
+package bootcamp;
+
+class Employee{
+	int id;
+	String name;
+	String dept;
+
+	public Employee(int id,String name,String dept) {
+		super();
+		this.id=id;
+		this.name=name;
+		this.dept=dept;
+	}
+	@Override
+	public String toString() {
+		return "Employee [id = " + id + ", name = " + name + ", dept = " + dept + "]";
+	}
+
+}
+public class toStringDemo {
+
+	public static void main(String[] args) {
+		 int salary =450000;
+		 Employee emp=new Employee(1001,"adarsh","data");
+		 System.out.println(salary);
+		 System.out.println(emp);
+
+	}
+
+}
+
+
+==============================encapsulation==================
+demo.java
+package encapsulation;
+
+
+public class demo {
+
+	public static void main(String[] args) {
+		employee emp =new employee();
+		System.out.println(emp.getId());
+		System.out.println(emp.getName());
+		emp.setId(10);
+		emp.setName("adarsh");
+		System.out.println(emp.getId());
+		System.out.println(emp.getName());
+		
+	 
+
+	}
+
+}
+
+employee.java
+
+package encapsulation;
+
+public class employee {
+
+	private int id;
+	private String name ;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+}
+
+
+=================inheritence=========================
+
+package module1;
+
+public class A {
+	private int a=10;
+	int b=20;
+	protected int c=30;
+	public int d=40;
+
+	public static void main(String[] args) {
+		 A o = new A();
+		 System.out.println(o.a);
+		 System.out.println(o.b);
+		 System.out.println(o.c);
+		 System.out.println(o.d);
+	}
+
+}
+
+package module1;
+
+public class B {
+
+	public static void main(String[] args) {
+ A o = new A();
+ System.out.println(o.b);
+ System.out.println(o.c);
+ System.out.println(o.d);
+	}
+
+}
+
+package module2;
+import module1.*;
+
+public class C {
+
+	public static void main(String[] args) {
+		 A o =new A();
+System.out.println(o.d);
+	}
+
+}
+
+
+package module2;
+import module1.A;
+public class D extends A {
+
+	public static void main(String[] args) {
+		 D o = new D();
+		 System.out.println(o.c);
+		 System.out.println(o.d);
+	}
+
+}
+	
